@@ -28,10 +28,11 @@ function app() {
   
   let star = new Body(1500, 0.0001);
   bodies.push(star);
+  centerStar(star)
   star.display(mainRef);
   
   for (let i = 0; i < 5; i++) {
-    let body = new Body(Math.random() * 150, 0.0001);
+    let body = new Body(Math.random() * 150, 1);
     bodies.push(body);
     body.display(mainRef);
   }
