@@ -18,7 +18,6 @@ class Body {
   }
 
   updateVelocities(fx, fy) {
-    console.log(fx / this.mass)
     this.vector.x += fx / this.mass;
     this.vector.y += fy / this.mass;
   }
@@ -33,7 +32,7 @@ class Body {
             Math.pow(obj.pos.y - this.pos.y, 2)
         ),
       };
-      
+
       const g = (G * this.mass * obj.mass) / distance.t;
 
       const sin = distance.x / distance.t;
@@ -74,7 +73,7 @@ class Body {
 
     this.setPos(this.pos.x + this.vector.x, this.pos.y + this.vector.y);
     this.gravitate(others);
-    this.checkBoundaries();
+    //this.checkBoundaries();
 
     setTimeout(() => {
       this.run(getBodies);
