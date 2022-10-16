@@ -52,28 +52,12 @@ class Body {
     this.element.style.top = `calc(50% - ${this.pos.y}px)`;
   }
 
-  checkBoundaries() {
-    if (
-      this.pos.x + this.displaySize / 2 > maxWidth / 2 ||
-      this.pos.x - this.displaySize / 2 < -maxWidth / 2
-    ) {
-      this.vector.x *= -1;
-    }
-    if (
-      this.pos.y + this.displaySize / 2 > maxHeight / 2 ||
-      this.pos.y - this.displaySize / 2 < -maxHeight / 2
-    ) {
-      this.vector.y *= -1;
-    }
-  }
-
   run(getBodies) {
     const bodies = getBodies();
     const others = bodies.filter((item) => item !== this);
 
     this.setPos(this.pos.x + this.vector.x, this.pos.y + this.vector.y);
     this.gravitate(others);
-    //this.checkBoundaries();
 
     setTimeout(() => {
       this.run(getBodies);
