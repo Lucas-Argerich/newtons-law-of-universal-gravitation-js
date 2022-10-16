@@ -17,6 +17,13 @@ class Body {
     this.element = document.createElement("div");
   }
 
+  center() {
+    this.pos.x = 0;
+    this.pos.y = 0;
+    this.vector.x = 0;
+    this.vector.y = 0;
+  }
+
   updateVelocities(fx, fy) {
     this.vector.x += fx / this.mass;
     this.vector.y += fy / this.mass;

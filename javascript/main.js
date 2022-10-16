@@ -18,13 +18,6 @@ function app() {
   const getBodies = () => {
     return bodies;
   };
-    
-  const centerStar = (ref) => {
-    ref.pos.x = 0
-    ref.pos.y = 0
-    ref.vector.x = 0
-    ref.vector.y = 0
-  }
   
   let star = new Body(1500, 0.0001);
   bodies.push(star);
