@@ -21,7 +21,7 @@ function app() {
   
   let star = new Body(1500, 0.0001);
   bodies.push(star);
-  centerStar(star)
+  star.center()
   star.display(mainRef);
   
   for (let i = 0; i < 5; i++) {
