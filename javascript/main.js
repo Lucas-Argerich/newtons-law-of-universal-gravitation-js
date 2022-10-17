@@ -1,11 +1,12 @@
+let mainRef = document.querySelector("main");
+let maxWidth = mainRef.offsetWidth;
+let maxHeight = mainRef.offsetHeight;
+
 const updateMaxParams = (ref) => {
   maxWidth = ref.offsetWidth;
   maxHeight = ref.offsetHeight;
 };
-let mainRef = document.querySelector("main");
-let maxWidth = 0;
-let maxHeight = 0;
-updateMaxParams(mainRef);
+
 window.onresize = () => {
   updateMaxParams(mainRef);
 };

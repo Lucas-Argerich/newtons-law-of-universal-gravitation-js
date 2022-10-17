@@ -1,7 +1,7 @@
 class Body {
   constructor(mass, force, angle) {
     this.mass = mass || Math.random() * 1000;
-    this.displaySize = this.mass / 100;
+    this.displaySize = this.mass / 50;
     this.pos = {
       x: (Math.random() - 0.5) * (maxWidth - this.displaySize),
       y: (Math.random() - 0.5) * (maxHeight - this.displaySize),
@@ -37,7 +37,7 @@ class Body {
 
   updateMass(mass) {
     this.mass = mass;
-    this.displaySize = mass / 100;
+    this.displaySize = mass / 50;
     this.element.style.width = `${this.displaySize}px`;
     this.element.style.height = `${this.displaySize}px`;
   }
@@ -106,7 +106,7 @@ class Body {
     this.running &&
       setTimeout(() => {
         this.run(getBodies);
-      }, 10);
+      }, maxWidth > 726 ? 10 : 20);
   }
 
   display(ref) {
