@@ -29,8 +29,8 @@ function app() {
   star.center()
   star.display(mainRef);
   
-  for (let i = 0; i < 5; i++) {
-    let body = new Body(Math.random() * 150, 1);
+  for (let i = 0; i < 15; i++) {
+    let body = new Body(Math.random() * 250, 1);
     bodies.push(body);
     body.display(mainRef);
   }
