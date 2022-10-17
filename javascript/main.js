@@ -13,11 +13,15 @@ window.onresize = () => {
 const G = 0.001;
 
 function app() {
-  const bodies = [];
+  let bodies = [];
   
   const getBodies = () => {
     return bodies;
   };
+
+  deleteBody = (body) => {
+    bodies = bodies.filter((i)=> i !== body)    
+  }
   
   let star = new Body(1500, 0.0001);
   bodies.push(star);
